@@ -11,7 +11,11 @@ import { Controller } from "stimulus"
 
 export default class extends Controller {
   // static targets = [ "output" ]
-
+  disconnect(){
+    if(this.session){
+      this.session.disconnect()
+    }
+  }
   connect() {
     // this.outputTarget.textContent = 'Hello, Stimulus!'
     this.apiKey = this.data.get("apiKey")
